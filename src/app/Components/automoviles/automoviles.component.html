@@ -1,0 +1,46 @@
+<div class="container m-1" align ="center">
+    <select style="width: 170px; height: 35px;"  (change)="selecccionOpcion($event)">
+        <option hidden >Escoja la categoria:</option>
+        <option value="Deportivo"> Deportivo </option>
+        <option value="Todoterreno"> Todoterreno </option>
+        <option value="Clasico"> Clasico </option>
+        <option value="Competicion">Competicion</option>
+    </select>
+    <br>
+    <h2>{{opcionSeleccionada}}</h2>
+</div>
+<div>
+    <div class="card-boy">
+        <table class="table table-striped table-dark" style="text-align: center;"> 
+            <thead>
+                <tr>
+                    <th>Marca:</th>
+                    <th>Modelo:</th>
+                    <th>Velocidad:</th>
+                    <th>Motor:</th>
+                    <th>Color:</th>
+                    <th>Capacidad:</th>
+                    <th>Cilindraje:</th>
+                    <th>Categoria:</th>
+                    <th>Imagen:</th>               
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vehiculo of vehiculos" class="text-center">
+                        
+                        <td>{{vehiculo.marca}}</td>
+                        <td>{{vehiculo.modelo}}</td>
+                        <td>{{vehiculo.velocidad}}</td>
+                        <td>{{vehiculo.motor}}</td>
+                        <td>{{vehiculo.color}}</td>
+                        <td>{{vehiculo.capacidad}}</td>
+                        <td>{{vehiculo.cilindraje}}</td>
+                        <td>{{vehiculo.categoria}}</td>
+                        <td><img src={{vehiculo.imagenBucket}} width="250" height="150"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

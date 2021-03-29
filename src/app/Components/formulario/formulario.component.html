@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Vehiculo</h3>
+        </div>
+        <div class="card-boy">
+            <form action="">
+                <div>
+                    <label>Marca:</label>
+                    <input type="text" class="form-control" [(ngModel)]="vehiculo.marca" name="marca">
+                </div>
+                <div>
+                    <label>Modelo:</label>
+                    <input type="text" class="form-control" [(ngModel)]="vehiculo.modelo" name="modelo">
+                </div>
+                <div>
+                    <label>Velocidad:</label>
+                    <input type="number" class="form-control" [(ngModel)]="vehiculo.velocidad" name="velocidad">
+                </div>
+                <div>
+                    <label>Motor:</label>
+                    <input type="text" class="form-control" [(ngModel)]="vehiculo.motor" name="motor">
+                </div>                
+                <div>
+                    <label>Color:</label>
+                    <input type="text" class="form-control" [(ngModel)]="vehiculo.color" name="color">
+                </div>
+                <div>
+                    <label>Capacidad:</label>
+                    <input type="number" class="form-control" [(ngModel)]="vehiculo.capacidad" name="capacidad">
+                </div>
+                <div>
+                    <label>Cilindraje:</label>
+                    <input type="number" class="form-control" [(ngModel)]="vehiculo.cilindraje" name="cilindraje">
+                </div>
+                <div>
+                    <label>Categoria:</label>
+                    <br />
+                    <br />
+                    <select style="width: 170px; height: 35px;"  (change)="selecccionOpcion($event)">
+                        <option hidden >Escoja la categoria:</option>
+                        <option value="Deportivo"> Deportivo </option>
+                        <option value="Todoterreno"> Todoterreno </option>
+                        <option value="Clasico"> Clasico </option>
+                        <option value="Competicion">Competicion</option>
+                    </select>
+                    <br />
+                    <br />
+                </div> 
+                <div>
+                    <label>Imagen:</label>
+                    <form>
+                        <!--<input type='file' name="archivo" (change)="readUrl($event)">
+                        <img [src]="urlPrev">-->
+                        <input type="file" name="archivo" (change)="onChange($event)" />
+                        <img [src]="urlPrev" width="400">
+                        <h5 *ngIf="subiendo">Subiendo imagen...</h5>
+                        <br />
+                        <br />
+                        <button type="button" class="btn btn-dark" (click)="onClickSubir($event)" >Guardar Vehiculo</button>
+
+                    </form>
+                    
+                    <div class="" *ngIf="showImagen" style="width: 150px;">
+                        <h1>Imagen subida</h1>
+                        <a [href]="urlImagen" target="_blank">Descargar Imagen</a>
+                        <img class="imgn-fluid" [src]="urlImagen" alt="" />
+                    </div>
+                    
+                    <div class="error" *ngIf="error">
+                        <h1>Ha ocurrido un error</h1>
+                    </div>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">CarTag</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['automoviles']">Clasificacion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['formulario']">Agregar</a>
+        </li>
+        
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar por marca" aria-label="Search" class="form-control" [(ngModel)]='marcaVehiculo' name="marca">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)= "buscarByMarca()">Buscar</button>
+      </form>
+    </div>
+  </nav>
+
+  <div align = "center">    
+    <tr *ngFor="let vehiculo of vehiculos" class="text-center">
+        <div *ngIf="vehiculos?.length > 0">
+            <div class="row">
+                <div class="col-sm-6">
+                <div class="card text-white bg-info mb-3" style="width:550px;">
+                    <div class="card-body">
+                    <img src={{vehiculo.imagenBucket}} width="400" height="280">   
+                    <h4 class="card-title">{{vehiculo.marca}}</h4>
+                    <h5 classs="card-title">{{vehiculo.modelo}}</h5>
+                    <h6 class="card-text">Velocidad: {{vehiculo.velocidad}}</h6>    
+                    <h6 class="card-text">Motor: {{vehiculo.motor}}</h6>    
+                    <h6 class="card-text">Color: {{vehiculo.color}}</h6>    
+                    <h6 class="card-text">Capacidad: {{vehiculo.capacidad}}</h6>    
+                    <h6 class="card-text">Cilindraje: {{vehiculo.cilindraje}}</h6>    
+                    <h6 class="card-text">Categoria: {{vehiculo.categoria}}</h6>    
+                    <a href="{{vehiculo.imagenCloud}}"type="button" class="btn btn-dark">Ver Imagen</a>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div> 
+    </tr>     
+  </div>
